@@ -8,24 +8,33 @@ build/
 .idea/
 .DS_Store
 
-# Flutter specific
+# Flutter generated
 .flutter-plugins
 .flutter-plugins-dependencies
 .metadata
-pubspec.lock
 
 # Android
 android/.gradle/
 android/local.properties
 android/captures/
-android/app/src/
-android/gradle/
+android/key.properties
+**/*.keystore
+**/*.jks
 
 # iOS
 ios/Pods/
 ios/.symlinks/
 ios/Flutter/Flutter.framework
 ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Flutter/flutter_export_environment.sh
+
+# Linux
+linux/flutter/ephemeral/
+
+# Web
+web/.dart_tool/
 
 # Miscellaneous
 *.class
@@ -36,3 +45,4 @@ ios/Flutter/Flutter.podspec
 .buildlog/
 .history
 .svn/
+_codeql_detected_source_root

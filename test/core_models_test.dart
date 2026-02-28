@@ -16,7 +16,7 @@ void main() {
 
   group('BookMetadata', () {
     test('creates with required fields', () {
-      final meta = BookMetadata(
+      const meta = BookMetadata(
         id: '1',
         title: 'Test Book',
         format: BookFormat.epub,
@@ -32,7 +32,7 @@ void main() {
     });
 
     test('copyWith preserves unchanged fields', () {
-      final meta = BookMetadata(
+      const meta = BookMetadata(
         id: '1',
         title: 'Test',
         format: BookFormat.pdf,
@@ -48,7 +48,7 @@ void main() {
 
   group('ReadingProgress', () {
     test('stores progress data', () {
-      final progress = ReadingProgress(
+      const progress = ReadingProgress(
         bookId: 'b1',
         locator: 'epub-scroll:0.5',
         percent: 0.5,
@@ -63,7 +63,7 @@ void main() {
 
   group('OpenedBook', () {
     test('holds metadata and optional start locator', () {
-      final meta = BookMetadata(
+      const meta = BookMetadata(
         id: '1',
         title: 'Test',
         format: BookFormat.epub,
@@ -83,7 +83,7 @@ void main() {
 
   group('BookSearchResult', () {
     test('stores search result data', () {
-      final result = BookSearchResult(
+      const result = BookSearchResult(
         locator: 'pdf-page:5',
         snippet: 'Jump to page 6',
         percent: 0.0,

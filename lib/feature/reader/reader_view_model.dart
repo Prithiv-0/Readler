@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import '../../core/model/reading_progress.dart';
 import '../../core/reader/reader_document.dart';
 import '../../core/reader/reader_engine_registry.dart';
-import '../../core/storage/book_file_storage.dart';
 import '../../domain/repository/ai_queued_request.dart';
 import '../../domain/repository/ai_repository.dart';
 import '../../domain/usecase/open_book_use_case.dart';
@@ -20,7 +19,6 @@ class ReaderViewModel extends ChangeNotifier {
   final SaveReadingProgressUseCase _saveReadingProgress;
   final SearchInBookUseCase _searchInBook;
   final AiRepository _aiRepository;
-  final BookFileStorage _fileStorage;
   final ReaderEngineRegistry _readerEngineRegistry;
   final ReaderPreferencesStore _preferencesStore;
 
@@ -32,14 +30,12 @@ class ReaderViewModel extends ChangeNotifier {
     required SaveReadingProgressUseCase saveReadingProgress,
     required SearchInBookUseCase searchInBook,
     required AiRepository aiRepository,
-    required BookFileStorage fileStorage,
     required ReaderEngineRegistry readerEngineRegistry,
     required ReaderPreferencesStore preferencesStore,
   })  : _openBook = openBook,
         _saveReadingProgress = saveReadingProgress,
         _searchInBook = searchInBook,
         _aiRepository = aiRepository,
-        _fileStorage = fileStorage,
         _readerEngineRegistry = readerEngineRegistry,
         _preferencesStore = preferencesStore {
     _loadPreferences();

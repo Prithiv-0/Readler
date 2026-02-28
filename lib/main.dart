@@ -38,7 +38,6 @@ class ReadlerApp extends StatelessWidget {
             saveReadingProgress: container.saveReadingProgressUseCase,
             searchInBook: container.searchInBookUseCase,
             aiRepository: container.aiRepository,
-            fileStorage: container.bookFileStorage,
             readerEngineRegistry: container.readerEngineRegistry,
             preferencesStore: container.readerPreferencesStore,
           ),

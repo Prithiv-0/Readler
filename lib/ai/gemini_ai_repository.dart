@@ -12,7 +12,6 @@ import '../domain/repository/ai_queued_request.dart';
 import '../domain/repository/ai_repository.dart';
 
 class GeminiAiRepository implements AiRepository {
-  static const _prefsName = 'readler_ai';
   static const _keyEnabled = 'ai_enabled';
   static const _keyApiKey = 'ai_api_key';
   static const _maxConversationEntries = 20;
@@ -244,17 +243,16 @@ class GeminiAiRepository implements AiRepository {
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     final candidates = json['candidates'] as List<dynamic>?;
-    final answer = (candidates?.isNotEmpty == true)
-        ? ((candidates![0] as Map<String, dynamic>)['content']
-                    as Map<String, dynamic>?)?['parts'] is List
-                ? (((candidates[0] as Map<String, dynamic>)['content']
-                            as Map<String, dynamic>)['parts']
-                        as List<dynamic>)
-                    .first['text']
-                    ?.toString()
-                    .trim()
-                : null
-        : null;
+
+    String? answer;
+    if (candidates != null && candidates.isNotEmpty) {
+      final content =
+          (candidates[0] as Map<String, dynamic>)['content'] as Map<String, dynamic>?;
+      final parts = content?['parts'];
+      if (parts is List && parts.isNotEmpty) {
+        answer = parts.first['text']?.toString().trim();
+      }
+    }
 
     if (answer == null || answer.isEmpty) {
       throw StateError('Gemini returned an empty response');
