@@ -239,7 +239,7 @@ class GeminiAiRepository implements AiRepository {
 
     if (response.statusCode < 200 || response.statusCode >= 300) {
       throw StateError(
-          'Gemini API error: ${response.statusCode} ${response.body}');
+          'Gemini API error: ${response.statusCode}');
     }
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;

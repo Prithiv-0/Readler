@@ -70,6 +70,7 @@ class BookRepositoryImpl implements BookRepository {
     );
   }
 
+  /// Persists reading progress, clamping percent to [0.0, 1.0].
   @override
   Future<void> saveReadingProgress(ReadingProgress progress) async {
     await _bookDao.updateProgress(
@@ -119,7 +120,7 @@ class BookRepositoryImpl implements BookRepository {
 
       final chapterTexts = archive.files
           .where((f) =>
-              !f.isFile == false &&
+              f.isFile &&
               (f.name.endsWith('.xhtml') ||
                   f.name.endsWith('.html') ||
                   f.name.endsWith('.htm')))

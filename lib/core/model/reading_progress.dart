@@ -1,6 +1,8 @@
 class ReadingProgress {
   final String bookId;
   final String locator;
+
+  /// Reading progress as a fraction from 0.0 to 1.0.
   final double percent;
   final int updatedAtEpochMs;
 
