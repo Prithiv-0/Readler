@@ -1,4 +1,39 @@
-# Readler Implementation Tracker
+# Readler Implementation Tracker — Flutter
+
+## Project Status: Converted to Flutter/Dart
+
+The project has been fully converted from Android/Kotlin to Flutter/Dart while preserving the same clean architecture, features, and module structure.
+
+## Architecture Mapping (Kotlin → Dart)
+
+| Kotlin Component | Flutter Equivalent |
+|---|---|
+| Room Database | sqflite |
+| ViewModel + StateFlow | ChangeNotifier + Provider |
+| Coroutines / Flow | Future / Stream |
+| SharedPreferences | shared_preferences |
+| WebView (EPUB) | flutter_html |
+| PdfRenderer | syncfusion_flutter_pdfviewer |
+| SAF File Picker | file_picker |
+| ConnectivityManager | connectivity_plus |
+| HttpURLConnection | http package |
+| UUID | uuid package |
+| ZipFile | archive package |
+
+## Modules Converted
+
+- [x] core/model — BookFormat, BookMetadata, ReadingProgress, OpenedBook, BookSearchResult
+- [x] core/database — AppDatabase (sqflite), BookDao
+- [x] core/storage — BookFileStorage, AppPrivateBookFileStorage, ImportedBookFile
+- [x] core/reader — ReaderEngine, ReaderEngineRegistry, ReaderDocument, EpubArchiveParser, PdfReaderEngine, ReaderLocatorCodec
+- [x] core/data — BookRepositoryImpl, BookMetadataExtractor, BookImportMetadataExtractor
+- [x] domain/repository — BookRepository, AiRepository, AiCapability, AiQueuedRequest
+- [x] domain/usecase — GetLibraryBooks, ImportBook, OpenBook, SaveReadingProgress, SearchInBook
+- [x] feature/library — LibraryViewModel, LibraryUiState, LibraryScreen
+- [x] feature/reader — ReaderViewModel, ReaderUiState, ReaderScreen, ReaderPreferences, ReaderPreferencesStore
+- [x] ai — GeminiAiRepository (caching, queuing, conversation history)
+- [x] app — AppContainer (DI), main.dart entry point
+- [x] test — BookRepositoryImpl tests converted
 
 Use this file as the single source of truth for planning and delivery progress.
 

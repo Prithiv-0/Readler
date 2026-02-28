@@ -1,9 +1,38 @@
-.gradle/
-/local.properties
-/.idea/
-.DS_Store
-/build/
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub/
+build/
 **/build/
-/captures/
-.externalNativeBuild/
-.cxx/
+*.iml
+.idea/
+.DS_Store
+
+# Flutter specific
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+pubspec.lock
+
+# Android
+android/.gradle/
+android/local.properties
+android/captures/
+android/app/src/
+android/gradle/
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.atom/
+.buildlog/
+.history
+.svn/
