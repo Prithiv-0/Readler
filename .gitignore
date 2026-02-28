@@ -1,9 +1,48 @@
-.gradle/
-/local.properties
-/.idea/
-.DS_Store
-/build/
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub/
+build/
 **/build/
-/captures/
-.externalNativeBuild/
-.cxx/
+*.iml
+.idea/
+.DS_Store
+
+# Flutter generated
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+
+# Android
+android/.gradle/
+android/local.properties
+android/captures/
+android/key.properties
+**/*.keystore
+**/*.jks
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Flutter/flutter_export_environment.sh
+
+# Linux
+linux/flutter/ephemeral/
+
+# Web
+web/.dart_tool/
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.atom/
+.buildlog/
+.history
+.svn/
+_codeql_detected_source_root

@@ -1,0 +1,4 @@
+enum ReaderScrollMode {
+  continuous,
+  paged,
+}
