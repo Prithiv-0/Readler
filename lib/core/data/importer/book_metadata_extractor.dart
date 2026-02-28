@@ -1,4 +1,4 @@
-import '../storage/imported_book_file.dart';
+import '../../storage/imported_book_file.dart';
 
 class BookImportMetadata {
   final String? title;
